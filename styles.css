@@ -1,0 +1,181 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4; /* Color de fondo para el cuerpo */
+}
+
+#div-principal {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4; /* Color de fondo para el cuerpo */
+}
+
+header {
+  background-color: rgb(0, 104, 74);
+  color: white;
+  padding: 3px 0;
+  text-align: center;
+}
+
+.hamburger {
+  position: absolute;
+  top: 14px;
+  right: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.button-container {
+  margin-bottom: 20px; /* Espacio entre los botones y la tabla */
+}
+
+.boton {
+  background-color: #4caf50; /* Verde */
+  border: none;
+  color: white; /* Cambiado de "blanco" a "white" */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.boton:hover {
+  background-color: #45a049; /* Verde más oscuro */
+}
+
+.table-container {
+  width: 80%;
+  max-width: 70%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: auto; /* Habilita el scroll si el contenido es demasiado grande */
+  max-height: 70vh; /* Limita la altura máxima del contenedor */
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  word-wrap: break-word;
+  font-size: 1em;
+  border-bottom: 1px solid #ddd;
+  text-align: center; /* Centrar horizontalmente */
+  vertical-align: middle; /* Centrar verticalmente */
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+thead th {
+  position: -webkit-sticky; /* Para navegadores basados en WebKit como Safari */
+  position: sticky;
+  top: 0; /* Posiciona el encabezado en la parte superior del contenedor */
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1; /* Asegura que el encabezado esté por encima del contenido de la tabla */
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+nav ul li {
+  padding: 10px 0; /* Ajusta este valor para cambiar el grosor vertical */
+  width: 9%;
+  text-align: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Alinea los elementos en una columna en pantallas pequeñas */
+  }
+
+  nav ul li {
+    width: 100%; /* Asegura que cada elemento ocupe el 100% del ancho del contenedor en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    max-width: 100%;
+  }
+  table,
+  th,
+  td {
+    font-size: 10px;
+    padding: 11px;
+  }
+
+  th,
+  td {
+    overflow-wrap: break-word;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.errors {
+  color: red;
+}

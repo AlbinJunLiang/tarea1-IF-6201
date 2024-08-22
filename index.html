@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depreciación linea recta y suma dígito</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAALVBMVEVHcExAredAredAredAredBredAredAredArOdAredAredAredAredAredArefCaiQgAAAAD3RSTlMAGWBKDSuClTdw/u3ArdzYmon0AAAAv0lEQVR4AWOgG2BUFmBRdmBNT3ZW0nBgYOBc3cC4xvHWu915q3eVAGXPNbDs9V3mYCa5LO4pkHuvgeWt9QEGBqZlfQeh3FkJQF3r3hlAuHtnFQC5a9Y1QLnWD4DclbOARrFUTWFaxrvWRUhype9KoMV9614dZD21bl3kcubdQM2suTcFGJzKk5mTWNQNwC5jcRQUcXGAuDJYM/3uGSA4ez3J1IHh3O5Vq1bvfvfu9S4g/YYhUznQBQpEm9XoFnIAN+FIhJRgBKYAAAAASUVORK5CYII="
+    />
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo-principal">
+        <img
+          src="https://github.com/AlbinJunLiang/tarea1-IF-6201/blob/main/logoUCR.png?raw=true"
+          alt="Descripción de la imagen"
+          style="height: 80px; vertical-align: middle"
+          srcset="
+            https://github.com/AlbinJunLiang/tarea1-IF-6201/blob/main/logoUCR.png?raw=true 1x,
+            https://github.com/AlbinJunLiang/tarea1-IF-6201/blob/main/logoUCR.png?raw=true 2x
+          "
+        />
+      </h1>
+      <button class="hamburger" id="hamburger-btn">☰</button>
+    </header>
+
+    <div id="div-principal">
+        <h2 id="titulo">Depreciación</h2>
+
+      <div class="button-container">
+          <div class="form-group">
+            <label for="valorLibros">Valor en libros:</label>
+            <input type="text" id="valorLibros" name="valorLibros" />
+            <div class="errors" id="valorLibrosError"></div>
+          </div>
+          <div class="form-group">
+            <label for="valorRescate">Valor de rescate:</label>
+            <input type="text" id="valorRescate" name="valorRescate" />
+            <div class="errors" id="valorRescateError"></div>
+          </div>
+          <div class="form-group">
+            <label for="vidaUtil">Vida útil:</label>
+            <input type="text" id="vidaUtil" name="vidaUtil" />
+            <div class="errors" id="vidaUtilError"></div>
+          </div>
+          <button class="boton" id="lineaRecta" onclick="validateForm(this)">
+            Línea recta
+          </button>
+          <button class="boton" id="sumaDigito" onclick="validateForm(this)">
+            Suma de dígitos
+          </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead id="id-thead"></thead>
+          <tbody id="id-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
