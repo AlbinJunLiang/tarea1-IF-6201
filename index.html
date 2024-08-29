@@ -27,30 +27,37 @@
     </header>
 
     <div id="div-principal">
-        <h2 id="titulo">Depreciación</h2>
+      <h2 id="titulo">Depreciación</h2>
 
       <div class="button-container">
-          <div class="form-group">
-            <label for="valorLibros">Valor en libros:</label>
-            <input type="text" id="valorLibros" name="valorLibros" />
-            <div class="errors" id="valorLibrosError"></div>
-          </div>
-          <div class="form-group">
-            <label for="valorRescate">Valor de rescate:</label>
-            <input type="text" id="valorRescate" name="valorRescate" />
-            <div class="errors" id="valorRescateError"></div>
-          </div>
-          <div class="form-group">
-            <label for="vidaUtil">Vida útil:</label>
-            <input type="text" id="vidaUtil" name="vidaUtil" />
-            <div class="errors" id="vidaUtilError"></div>
-          </div>
-          <button class="boton" id="lineaRecta" onclick="validateForm(this)">
-            Línea recta
-          </button>
-          <button class="boton" id="sumaDigito" onclick="validateForm(this)">
-            Suma de dígitos
-          </button>
+        <div class="form-group">
+          <label for="valorLibros">Valor en libros:</label>
+          <input type="text" id="valorLibros" name="valorLibros" />
+          <div class="errors" id="valorLibrosError"></div>
+        </div>
+        <div class="form-group">
+          <label for="valorRescate">Valor de rescate:</label>
+          <input type="text" id="valorRescate" name="valorRescate" />
+          <div class="errors" id="valorRescateError"></div>
+        </div>
+        <div class="form-group">
+          <label for="vidaUtil">Vida útil:</label>
+          <input type="text" id="vidaUtil" name="vidaUtil" />
+          <div class="errors" id="vidaUtilError"></div>
+        </div>
+        <button class="boton" id="lineaRecta" onclick="validateForm(this)">
+          Línea recta
+        </button>
+        <button class="boton" id="sumaDigito" onclick="validateForm(this)">
+          Suma de dígitos
+        </button>
+      </div>
+
+      <div>
+        <select id="opciones" name="opciones">
+          <option value="1">Anual</option>
+          <option value="2">Mensual</option>
+        </select>
       </div>
 
       <div class="table-container">
