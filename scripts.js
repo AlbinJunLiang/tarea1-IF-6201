@@ -1,7 +1,7 @@
 const thead = document.getElementById('id-thead');
 const tbody = document.getElementById('id-tbody');
 const titulo = document.getElementById('titulo');
-
+const selectElement = document.getElementById('opciones');
 
 
 
@@ -21,10 +21,12 @@ function depreciacionLineaRecta(valorLibros, ValorRescate, vidaUtil) {
 }
 
 function mostrarTablaLineaRecta(thead) {
+    let tiempo = selectElement.value == '1' ? 'anual' : 'mensual';
+
     thead.innerHTML =
         `
           <th>Año</th>
-          <th>Depreciación anual</th>
+          <th>Depreciación ${tiempo}</th>
           <th>Depreciación acumulada</th>
           <th>Valor en libros</th>
         `;
@@ -51,7 +53,7 @@ function obtenerLineaRecta(thead, tbody, valorLibros, ValorRescate, vidaUtil) {
             tbody.innerHTML +=
                 `
         <td style="font-weight: bold;">${i}</td>
-        <td>${depreciacionAnual}</td>
+        <td>${selectElement.value == '1' ? depreciacionAnual : depreciacionAnual / 12}</td>
         <td>${depreciacionAcumulada}</td>
         <td>${nuevoValorLibros}</td>
         `;
@@ -125,12 +127,13 @@ function validateForm(button) {
 
 
 function mostrarTablaSumaDigitos(thead) {
+    let tiempo = selectElement.value == '1' ? 'anual' : 'mensual';
     thead.innerHTML =
         `
           <th>Año</th>
           <th>Fracción</th>
           <th>Depreciación total</th>
-          <th>Depreciación anual</th>
+          <th>Depreciación ${tiempo}</th>
           <th>Depreciación acumulada</th>
           <th>Valor en libros</th>
         `;
@@ -146,7 +149,7 @@ function obtenerSumaDigito(thead, tbody, valorLibros, valorRescate, vidaUtil) {
     mostrarTablaSumaDigitos(thead);
     let depreciacionAcumulada = 0;
     let depreciacionAnual = depreciacionSumaDigitos(vidaUtil);
-    const depreciacionTotal = valorLibros-valorRescate;
+    const depreciacionTotal = valorLibros - valorRescate;
     let nuevoValorLibros = 0;
     let nuevaDepreciacionAnual = 0;
     let fraccion = 0;
@@ -163,17 +166,17 @@ function obtenerSumaDigito(thead, tbody, valorLibros, valorRescate, vidaUtil) {
         <td>${valorLibros}</td>
         `;
         } else {
-            fraccion = ((vidaUtil+1)-i)/depreciacionAnual;
-            nuevaDepreciacionAnual = (parseFloat(fraccion)*parseFloat(depreciacionTotal));
+            fraccion = ((vidaUtil + 1) - i) / depreciacionAnual;
+            nuevaDepreciacionAnual = (parseFloat(fraccion) * parseFloat(depreciacionTotal));
             depreciacionAcumulada = depreciacionAcumulada + nuevaDepreciacionAnual;
-            nuevoValorLibros = valorLibros-depreciacionAcumulada;
+            nuevoValorLibros = valorLibros - depreciacionAcumulada;
 
             tbody.innerHTML +=
                 `
         <td style="font-weight: bold;">${i}</td>
-        <td>${fraccion }</td>
+        <td>${parseFloat(fraccion.toFixed(3))}</td>
         <td>${depreciacionTotal}</td>
-        <td>${parseFloat(nuevaDepreciacionAnual.toFixed(3))}</td>
+        <td>${selectElement.value == '1' ? parseFloat(nuevaDepreciacionAnual.toFixed(3)) : parseFloat((nuevaDepreciacionAnual / 12).toFixed(3))}</td>
         <td>${parseFloat(depreciacionAcumulada.toFixed(3))}</td>
         <td>${parseFloat(nuevoValorLibros.toFixed(3))}</td>
         `;
